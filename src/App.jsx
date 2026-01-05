@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import MinesGame from './components/Mines/MinesGame';
+import { initAudio, preloadSounds } from './utils/audio';
 import './styles/App.css';
 
 function App() {
+  useEffect(() => {
+    // Initialize audio system
+    initAudio();
+
+    // Preload game sounds
+    preloadSounds().catch(console.warn);
+  }, []);
+
   return (
     <Router>
       <div className="App">

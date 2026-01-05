@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { playSound } from '../../utils/audio';
 import './Tile.css';
 
 const Tile = ({ 
@@ -24,6 +25,19 @@ const Tile = ({
   // Calculate position for grid layout
   const row = Math.floor(index / 5);
   const col = index % 5;
+
+  // Play sound when tile is revealed
+  useEffect(() => {
+    if (isRevealed) {
+      if (isMine) {
+        // Play bomb/explosion sound
+        playSound('bomb').catch(() => playSound('explosion'));
+      } else {
+        // Play diamond/coin sound
+        playSound('diamond').catch(() => playSound('coin'));
+      }
+    }
+  }, [isRevealed, isMine]);
 
   return (
     <div

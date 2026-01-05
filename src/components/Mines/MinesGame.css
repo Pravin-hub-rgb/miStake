@@ -205,6 +205,7 @@
   }
 
   .layout-test-middle {
+    flex-direction: column; /* Stack sections vertically on mobile */
     height: auto; /* Allow natural height on tablets */
     gap: 12px;
   }
@@ -212,7 +213,7 @@
   .layout-tiles,
   .layout-controls,
   .layout-stats {
-    width: 100%; /* Full width on tablets */
+    width: 100%; /* Full width when stacked */
     padding: 12px;
   }
 
