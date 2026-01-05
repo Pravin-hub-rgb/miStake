@@ -1,0 +1,232 @@
+/* Controls Component Styles - Stake Inspired */
+
+.controls {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.controls-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--accent-gold), #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Control Groups */
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.control-label {
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Input with Buttons */
+.input-with-buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  position: relative;
+}
+
+.input-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--accent-gold), #ff6b6b);
+  color: #000;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+.input-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+.input-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.bet-input, .mines-input {
+  width: 80px;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: linear-gradient(180deg, #20243a 0%, #1a1e33 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.bet-input:focus, .mines-input:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+  background: #232741;
+}
+
+/* Quick Bet Buttons */
+.quick-bets, .quick-mines {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.quick-bet-btn, .quick-mine-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: linear-gradient(135deg, var(--bg-tertiary), #2d3436);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.quick-bet-btn:hover:not(:disabled), .quick-mine-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2d3436, #3a3f51);
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.quick-bet-btn:disabled, .quick-mine-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+/* Game State Info */
+.game-state-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--spacing-lg);
+}
+
+.state-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.state-text.playing {
+  color: var(--accent-blue);
+  text-shadow: 0 0 10px rgba(55, 66, 250, 0.3);
+}
+
+.state-text.cashed_out {
+  color: var(--accent-green);
+  text-shadow: 0 0 10px rgba(46, 213, 115, 0.3);
+}
+
+.state-text.game_over {
+  color: var(--accent-red);
+  text-shadow: 0 0 10px rgba(255, 71, 87, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .controls {
+    padding: var(--spacing-md);
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+  }
+  
+  .control-label {
+    font-size: 0.875rem;
+  }
+  
+  .input-with-buttons {
+    gap: var(--spacing-sm);
+  }
+  
+  .input-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .quick-bets, .quick-mines {
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+  
+  .quick-bet-btn, .quick-mine-btn {
+    padding: var(--spacing-sm);
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .controls {
+    padding: var(--spacing-sm);
+  }
+  
+  .section-title {
+    font-size: 1.125rem;
+  }
+  
+  .input-btn {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .bet-input, .mines-input {
+    width: 60px;
+    font-size: 0.875rem;
+    padding: var(--spacing-sm);
+  }
+}

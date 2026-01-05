@@ -1,0 +1,258 @@
+/* Stats Component Styles - Stake Inspired */
+
+.stats {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.stats-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.section-title {
+  font-size: 1.1rem;
+  margin: 0 0 var(--spacing-xs) 0;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--accent-gold), #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+/* Stat Cards */
+.stat-card {
+  background: linear-gradient(180deg, #20243a 0%, #1a1e33 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hard);
+  border-color: rgba(255, 215, 0, 0.3);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: var(--font-weight-bold);
+}
+
+.stat-value {
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* Multiplier Value */
+.multiplier-value {
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.multiplier-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.multiplier-number {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Profit Values */
+.profit-next {
+  font-size: 1.25rem;
+}
+
+.profit-next.positive {
+  color: var(--accent-green);
+  text-shadow: 0 0 10px rgba(46, 213, 115, 0.3);
+}
+
+.profit-next.negative {
+  color: var(--accent-red);
+  text-shadow: 0 0 10px rgba(255, 71, 87, 0.3);
+}
+
+.profit-indicator {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-normal);
+}
+
+/* Total Profit */
+.total-profit {
+  font-size: 1.5rem;
+}
+
+.total-profit.positive {
+  color: var(--accent-green);
+  text-shadow: 0 0 10px rgba(46, 213, 115, 0.3);
+}
+
+.total-profit.negative {
+  color: var(--accent-red);
+  text-shadow: 0 0 10px rgba(255, 71, 87, 0.3);
+}
+
+/* Win Rate */
+.win-rate {
+  font-size: 1.5rem;
+  color: var(--accent-blue);
+  text-shadow: 0 0 10px rgba(55, 66, 250, 0.3);
+}
+
+/* Current Bet */
+.current-bet {
+  font-size: 1.25rem;
+  color: var(--accent-gold);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+/* Game Status */
+.game-status {
+  font-size: 1rem;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.status-badge.idle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.status-badge.playing {
+  background: rgba(55, 66, 250, 0.1);
+  border: 1px solid var(--accent-blue);
+  color: var(--accent-blue);
+  box-shadow: 0 0 10px rgba(55, 66, 250, 0.3);
+}
+
+.status-badge.cashed_out {
+  background: rgba(46, 213, 115, 0.1);
+  border: 1px solid var(--accent-green);
+  color: var(--accent-green);
+  box-shadow: 0 0 10px rgba(46, 213, 115, 0.3);
+}
+
+.status-badge.game_over {
+  background: rgba(255, 71, 87, 0.1);
+  border: 1px solid var(--accent-red);
+  color: var(--accent-red);
+  box-shadow: 0 0 10px rgba(255, 71, 87, 0.3);
+}
+
+/* Risk Level */
+.risk-level {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.risk-meter {
+  width: 100%;
+  height: 8px;
+  background: #2d3436;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.risk-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-gold), var(--accent-red));
+  transition: width 0.3s ease;
+}
+
+.risk-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats {
+    padding: var(--spacing-md);
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .stat-card {
+    padding: var(--spacing-sm);
+  }
+  
+  .stat-value {
+    font-size: 1rem;
+  }
+  
+  .multiplier-value {
+    font-size: 1.25rem;
+  }
+  
+  .multiplier-number {
+    font-size: 1.5rem;
+  }
+  
+  .total-profit, .win-rate, .current-bet {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats {
+    padding: var(--spacing-sm);
+  }
+  
+  .section-title {
+    font-size: 1.125rem;
+  }
+  
+  .stat-value {
+    font-size: 0.875rem;
+  }
+  
+  .multiplier-value {
+    font-size: 1rem;
+  }
+  
+  .multiplier-number {
+    font-size: 1.25rem;
+  }
+  
+  .total-profit, .win-rate, .current-bet {
+    font-size: 1rem;
+  }
+}

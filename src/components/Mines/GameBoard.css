@@ -1,0 +1,291 @@
+/* Game Board Styles - Stake Inspired */
+
+.game-board {
+  background: linear-gradient(180deg, #171a2b 0%, #1a1e33 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-soft);
+  min-width: 400px;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(180deg, #20243a 0%, #1a1e33 100%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+  gap: var(--spacing-sm);
+}
+
+/* Remove debug pattern */
+
+/* Tile Styles */
+.tile {
+  position: relative;
+  width: calc((100% - (4 * var(--spacing-sm))) / 5); /* Responsive width for 5-tile grid */
+  height: calc((100% - (4 * var(--spacing-sm))) / 5); /* Responsive height for 5-tile grid */
+  background: #444; /* Darker gray background */
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.tile:hover:not(.revealed) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  background: #555; /* Slightly lighter on hover */
+}
+
+.tile:active:not(.revealed) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Covered Tile */
+.tile.covered {
+  background: #555; /* Darker gray for covered tiles */
+}
+
+.tile.covered::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+/* Revealed Tile */
+.tile.revealed {
+  background: #333; /* Dark gray for revealed tiles */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Gem Tile */
+.tile.gem {
+  background: #4a5d3a; /* Green-gray for gems */
+  box-shadow: 0 0 15px rgba(46, 213, 115, 0.4);
+}
+
+.tile.gem::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(46, 213, 115, 0.1));
+  pointer-events: none;
+}
+
+/* Bomb Tile */
+.tile.bomb {
+  background: #5d3a3a; /* Red-gray for bombs */
+  box-shadow: 0 0 15px rgba(255, 71, 87, 0.4);
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+.tile.bomb::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 71, 87, 0.1));
+  pointer-events: none;
+}
+
+/* Tile Content */
+.tile-content {
+  font-size: 2rem;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.tile.revealed .tile-content {
+  transform: scale(1.1);
+}
+
+/* Debug content for covered tiles */
+.tile-debug {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Tile Hover Effect */
+.tile-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0));
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.tile:hover .tile-hover {
+  opacity: 1;
+}
+
+/* Ripple Effect */
+.ripple-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  animation: ripple 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}
+
+/* Explosion Effect */
+.explosion-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.explosion-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: explosion 0.8s ease-out;
+  pointer-events: none;
+}
+
+.explosion-flash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: flash 0.5s ease-out;
+  pointer-events: none;
+}
+
+@keyframes explosion {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  50% {
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .game-board {
+    min-width: 350px;
+    padding: var(--spacing-md);
+  }
+
+  .board-container {
+    width: 400px;
+    height: 400px;
+  }
+
+  .tile {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-board {
+    min-width: 250px;
+    padding: var(--spacing-sm);
+  }
+
+  .board-container {
+    width: 280px;
+    height: 280px;
+  }
+
+  .tile {
+    font-size: 1.25rem;
+  }
+}

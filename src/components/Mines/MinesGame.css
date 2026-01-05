@@ -1,0 +1,324 @@
+/* Mines Game - Complete Layout */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.mines-game {
+  background: #000000; /* Pure black background */
+  min-height: 100vh;
+  padding-top: 80px; /* Account for sticky navbar */
+  overflow-y: auto;
+}
+
+.back-button {
+  background: #333;
+  color: white;
+  border: 1px solid #666;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.back-button:hover {
+  background: #444;
+}
+
+/* Sticky Top Navbar */
+.sticky-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  z-index: 100;
+}
+
+.navbar-title {
+  margin: 0;
+  font-size: 2rem;
+  font-family: 'Pacifico', cursive;
+  color: white !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  text-shadow: none !important;
+  letter-spacing: 2px;
+}
+
+.balance-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.balance-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.balance-amount {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+/* Main Game Area - 50% Tiles + 25% Controls + 25% Stats */
+.layout-test-middle {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.layout-tiles {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.layout-controls {
+  width: 25%;
+  padding: 15px;
+  border: 1px solid #2d3436;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.layout-stats {
+  width: 25%;
+  padding: 15px;
+  border: 1px solid #2d3436;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.game-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Bottom section - Game History */
+.layout-test-bottom {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #2d3436;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.02);
+  overflow-y: auto;
+  max-height: 600px;
+  margin-top: 10px;
+}
+
+.history-title {
+  margin: 0 0 16px 0;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.history-item.win {
+  border-left: 4px solid #2ed573;
+}
+
+.history-item.loss {
+  border-left: 4px solid #ff4757;
+}
+
+.history-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.history-time {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.history-bet {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.history-result {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.history-profit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.profit-amount.win {
+  color: #2ed573;
+}
+
+.profit-amount.loss {
+  color: #ff4757;
+}
+
+.history-multiplier {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 1024px) {
+  .mines-game {
+    padding-top: 70px; /* Reduce navbar spacing on tablets */
+  }
+
+  .sticky-navbar {
+    padding: 12px 15px;
+  }
+
+  .navbar-title {
+    font-size: 1.8rem;
+  }
+
+  .layout-test-middle {
+    height: auto; /* Allow natural height on tablets */
+    gap: 12px;
+  }
+
+  .layout-tiles,
+  .layout-controls,
+  .layout-stats {
+    width: 100%; /* Full width on tablets */
+    padding: 12px;
+  }
+
+  .layout-test-bottom {
+    padding: 15px;
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mines-game {
+    padding: 15px;
+    padding-top: 70px;
+  }
+
+  .sticky-navbar {
+    padding: 10px 12px;
+  }
+
+  .navbar-title {
+    font-size: 1.5rem;
+  }
+
+  .balance-display {
+    gap: 6px;
+  }
+
+  .balance-amount {
+    font-size: 1rem;
+  }
+
+  .layout-test-middle {
+    gap: 10px;
+  }
+
+  .layout-tiles,
+  .layout-controls,
+  .layout-stats {
+    padding: 10px;
+  }
+
+  .layout-test-bottom {
+    padding: 12px;
+    max-height: 300px;
+    margin-top: 8px;
+  }
+
+  .history-title {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .history-item {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mines-game {
+    padding: 10px;
+    padding-top: 65px;
+  }
+
+  .sticky-navbar {
+    padding: 8px 10px;
+  }
+
+  .navbar-title {
+    font-size: 1.3rem;
+  }
+
+  .back-button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .layout-test-middle {
+    gap: 8px;
+  }
+
+  .layout-tiles,
+  .layout-controls,
+  .layout-stats {
+    padding: 8px;
+  }
+
+  .layout-test-bottom {
+    padding: 10px;
+    max-height: 250px;
+    margin-top: 6px;
+  }
+
+  .history-title {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .history-item {
+    padding: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .history-profit {
+    align-self: flex-end;
+    align-items: flex-end;
+  }
+}
