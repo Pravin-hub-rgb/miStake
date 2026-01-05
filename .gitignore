@@ -44,3 +44,6 @@ coverage/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Documentation (project planning, internal docs)
+docs/
