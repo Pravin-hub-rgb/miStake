@@ -9,7 +9,7 @@ const MinesGame = () => {
   const navigate = useNavigate();
 
   // Game state
-  const [balance, setBalance] = useState(10000); // Starting play money
+  const [balance, setBalance] = useState(1000); // Starting play money
   const [betAmount, setBetAmount] = useState(100);
   const [numMines, setNumMines] = useState(10);
   const [gameState, setGameState] = useState('idle'); // idle, playing, cashed_out, game_over
