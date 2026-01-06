@@ -217,7 +217,7 @@ const MinesGame = () => {
         <h1 className="navbar-title">miStake</h1>
         <div className="balance-display">
           <span className="balance-label">Balance:</span>
-          <span className="balance-amount">${balance.toLocaleString()}</span>
+          <span className="balance-amount">${balance.toFixed(2)}</span>
         </div>
       </div>
 
