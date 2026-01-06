@@ -134,7 +134,7 @@ const MinesGame = () => {
         setGameState('cashed_out');
 
         const winnings = betAmount * riggedMultiplier;
-        setBalance(prev => prev + winnings);
+        setBalance(prev => prev + (winnings - betAmount));
 
         const profit = Math.round((winnings - betAmount) * 100) / 100; // Round profit
         const result = {
@@ -154,7 +154,7 @@ const MinesGame = () => {
     if (gameState !== 'playing') return;
 
     const winnings = betAmount * multiplier;
-    setBalance(prev => prev + winnings);
+    setBalance(prev => prev + (winnings - betAmount));
 
     setGameState('cashed_out');
 
