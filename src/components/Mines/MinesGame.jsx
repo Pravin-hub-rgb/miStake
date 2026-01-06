@@ -211,13 +211,20 @@ const MinesGame = () => {
     <div className="mines-game">
       {/* Sticky Top Navbar */}
       <div className="sticky-navbar">
-        <button className="back-button" onClick={() => navigate('/')}>
-          ← Back
-        </button>
-        <h1 className="navbar-title">miStake</h1>
-        <div className="balance-display">
-          <span className="balance-label">Balance:</span>
-          <span className="balance-amount">${balance.toFixed(2)}</span>
+        <div className="navbar-left">
+          <button className="back-button" onClick={() => navigate('/')}>
+            ← Back
+          </button>
+          <span className="navbar-brand">miStake</span>
+        </div>
+        <div className="navbar-center">
+          <h1 className="navbar-title">mines</h1>
+        </div>
+        <div className="navbar-right">
+          <div className="balance-display">
+            <span className="balance-label">Balance:</span>
+            <span className="balance-amount">${balance.toFixed(2)}</span>
+          </div>
         </div>
       </div>
 
