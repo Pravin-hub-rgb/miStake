@@ -138,9 +138,10 @@ const Controls = ({
           )}
           
           {(gameState === 'cashed_out' || gameState === 'game_over') && (
-            <button 
+            <button
               className="btn btn-secondary"
-              onClick={resetGame}
+              onClick={startGame}
+              disabled={betAmount > balance}
             >
               PLAY AGAIN
             </button>
