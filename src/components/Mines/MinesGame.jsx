@@ -222,7 +222,7 @@ const MinesGame = () => {
         </div>
         <div className="navbar-right">
           <div className="balance-display">
-            <span className="balance-label">Balance:</span>
+            <span className="balance-label">Bal:</span>
             <span className="balance-amount">${balance.toFixed(2)}</span>
           </div>
         </div>

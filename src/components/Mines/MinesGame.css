@@ -45,7 +45,7 @@
 }
 
 .navbar-brand {
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   font-family: 'Pacifico', cursive;
   color: white;
   letter-spacing: 1px;
@@ -64,7 +64,7 @@
 
 .navbar-title {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: 'Pacifico', cursive;
   color: white !important;
   background: none !important;
@@ -262,11 +262,11 @@
   }
 
   .navbar-brand {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 
   .navbar-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .balance-display {
