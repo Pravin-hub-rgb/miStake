@@ -26,6 +26,16 @@
   margin: 0 auto;
 }
 
+.site-title-link {
+  text-decoration: none;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.site-title-link:hover {
+  transform: scale(1.05);
+}
+
 .site-title {
   font-size: 3.5rem;
   margin: 0;
@@ -37,6 +47,7 @@
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   letter-spacing: 4px;
   text-align: center;
+  cursor: pointer;
 }
 
 .main-nav {
@@ -83,7 +94,7 @@
 
 .section-title {
   font-size: 2rem;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: 15px !important;
   color: var(--text-primary);
 }
 

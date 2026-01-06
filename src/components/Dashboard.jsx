@@ -8,7 +8,9 @@ const Dashboard = () => {
       {/* Header */}
       <header className="dashboard-header">
         <div className="header-content">
-          <h1 className="site-title">miStake</h1>
+          <Link to="/" className="site-title-link">
+            <h1 className="site-title">miStake</h1>
+          </Link>
           <nav className="main-nav">
             <Link to="/" className="nav-link active">Games</Link>
             <Link to="/about" className="nav-link">About</Link>
