@@ -217,9 +217,6 @@ const MinesGame = () => {
           </button>
           <span className="navbar-brand">miStake</span>
         </div>
-        <div className="navbar-center">
-          <h1 className="navbar-title">mines</h1>
-        </div>
         <div className="navbar-right">
           <div className="balance-display">
             <span className="balance-label">Bal:</span>
@@ -232,6 +229,7 @@ const MinesGame = () => {
       <div className="layout-test-middle">
         {/* Section 1 - 50% - Game Board */}
         <div className="layout-tiles">
+          <h1 className="game-page-title">Mines</h1>
           <div className="game-grid">
             <GameBoard
               board={board}
