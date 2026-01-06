@@ -129,6 +129,7 @@
   font-size: 2.5rem;
   font-family: 'Pacifico', cursive;
   color: white;
+  margin-top: 20px;
   margin-bottom: 20px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
